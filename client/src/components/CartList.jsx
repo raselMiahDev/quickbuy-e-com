@@ -25,18 +25,18 @@ const CartList = () => {
             />
           </div>
           <div className="py-5 md:py-0">
-            <h1 className="text-xl text-slate-700">
+            <h1 className="text-lg text-slate-700">
               Hardware Tools Hardware ToolsHardware ToolsHardware
             </h1>
           </div>
 
-          <div className="flex gap-8 border p-2 rounded text-xl md:w-38 w-32">
-            <button onClick={decrimentHandle} className="text-purple-800">
+          <div className="flex items-center gap-8 border border-purple-400 rounded-xl text-xl md:w-38 w-32">
+            <button onClick={decrimentHandle} className="text-white bg-purple-600 p-2 rounded-l-lg">
               -
             </button>
 
             <span>{conunt}</span>
-            <button onClick={incrimentHandle} className="text-purple-800">
+            <button onClick={incrimentHandle} className="text-white bg-purple-600 p-2 rounded-r-lg">
               +
             </button>
           </div>
@@ -51,18 +51,18 @@ const CartList = () => {
             />
           </div>
           <div className="py-5 md:py-0">
-            <h1 className="text-xl text-slate-700">
+            <h1 className="text-lg text-slate-700">
               Hardware Tools Hardware ToolsHardware ToolsHardware
             </h1>
           </div>
 
-          <div className="flex gap-8 border p-2 rounded text-xl md:w-38 w-32">
-            <button onClick={decrimentHandle} className="text-purple-800">
+          <div className="flex items-center gap-8 border border-purple-400 rounded-xl text-xl md:w-38 w-32">
+            <button onClick={decrimentHandle} className="text-white bg-purple-600 p-2 rounded-l-lg">
               -
             </button>
 
             <span>{conunt}</span>
-            <button onClick={incrimentHandle} className="text-purple-800">
+            <button onClick={incrimentHandle} className="text-white bg-purple-600 p-2 rounded-r-lg">
               +
             </button>
           </div>
@@ -77,18 +77,18 @@ const CartList = () => {
             />
           </div>
           <div className="py-5 md:py-0">
-            <h1 className="text-xl text-slate-700">
+            <h1 className="text-lg text-slate-700">
               Hardware Tools Hardware ToolsHardware ToolsHardware
             </h1>
           </div>
 
-          <div className="flex gap-8 border p-2 rounded text-xl md:w-38 w-32">
-            <button onClick={decrimentHandle} className="text-purple-800">
+          <div className="flex items-center gap-8 border border-purple-400 rounded-xl text-xl md:w-38 w-32">
+            <button onClick={decrimentHandle} className="text-white bg-purple-600 p-2 rounded-l-lg">
               -
             </button>
 
             <span>{conunt}</span>
-            <button onClick={incrimentHandle} className="text-purple-800">
+            <button onClick={incrimentHandle} className="text-white bg-purple-600 p-2 rounded-r-lg">
               +
             </button>
           </div>
