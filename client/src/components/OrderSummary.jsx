@@ -6,7 +6,7 @@ const Price = () => {
       </div>
 
       <div className="pt-5 md:pt-10 ">
-        <div className="space-y-4 text-lg">
+        <div className="space-y-4 text-base">
           <div className="flex justify-between">
             <span>Shopping</span>
             <span>900 Tk</span>

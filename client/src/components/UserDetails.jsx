@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import InputField from './InputField';
-import CheckOutButton from './CheckOutButton';
 
 const UserDetails = () => {
     const [formData,setFormData]=useState({
-        fName:"",
-        lName:"",
+        name:"",
         phone:"",
         email:"",
         zipCode:"",
@@ -35,7 +33,7 @@ const UserDetails = () => {
     const handleCheckboxChange = (event)=>{
         if(event.target.checked){
             setSameInfo({
-                shipName: formData.fName,
+                shipName: formData.name,
                 shipAddress: formData.addres,
                 shipZipCode: formData.zipCode,
                 shipCity: formData.city
@@ -50,7 +48,11 @@ const UserDetails = () => {
         }
     }
     const submitHandle = ()=>{
-        alert(JSON.stringify(formData))
+        const formDataWithShipping = {
+            ...formData,
+            ...sameInfo
+        }
+        alert(JSON.stringify(formDataWithShipping))
     }
     return (
         <div >
@@ -62,8 +64,7 @@ const UserDetails = () => {
             {/* User input fields start  */}
             <div className='pt-5 md:pt-10 '>
                 <div className='md:flex'>
-                    <InputField onChange={handleOnChange} name="fName" type="text" label="Your Name" placeholder="First Name"/>
-                    <InputField onChange={handleOnChange} name="lName" type="text" label="" placeholder="Last Name"/>
+                    <InputField onChange={handleOnChange} name="name" type="text" label="Full Name" placeholder="Enter full name"/>
                 </div>
 
                 <div className='md:flex'>
@@ -76,7 +77,7 @@ const UserDetails = () => {
                     <InputField onChange={handleOnChange} name="city" type="text" label="City" placeholder="Enter city"/>
                 </div>
 
-                <div className='md:flex divide-y'>
+                <div className='md:flex'>
                     <InputField onChange={handleOnChange} name="addres" type="text" label="Addres" placeholder="Enter Addres"/>
                 </div>
 
@@ -98,8 +99,8 @@ const UserDetails = () => {
             {/* User input fields end  */}
             </div>
 
-            <div>
-                <CheckOutButton onClick={submitHandle}/>
+            <div className='mt-5 md:mt-7 flex justify-center md:justify-end'>
+                <button onClick={submitHandle} type='submit' className='bg-purple-700 text-white block w-full md:w-32 py-3 rounded focus:ring-2 hover:bg-purple-900 transition duration-200'>Check Out</button>
             </div>
         </div>
     );

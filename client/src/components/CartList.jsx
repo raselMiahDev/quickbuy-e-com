@@ -25,74 +25,23 @@ const CartList = () => {
             />
           </div>
           <div className="py-5 md:py-0">
-            <h1 className="text-lg text-slate-700">
+            <h1 className="text-base text-slate-700">
               Hardware Tools Hardware ToolsHardware ToolsHardware
             </h1>
           </div>
 
-          <div className="flex items-center gap-8 border border-purple-400 rounded-xl text-xl md:w-38 w-32">
-            <button onClick={decrimentHandle} className="text-white bg-purple-600 p-2 rounded-l-lg">
+          <div className="flex items-center gap-5 border border-purple-400 rounded-xl text-xl md:w-32 w-20">
+            <button onClick={decrimentHandle} className="text-white bg-purple-600 p-1 rounded-l-lg">
               -
             </button>
 
             <span>{conunt}</span>
-            <button onClick={incrimentHandle} className="text-white bg-purple-600 p-2 rounded-r-lg">
+            <button onClick={incrimentHandle} className="text-white bg-purple-600 p-1 rounded-r-lg">
               +
             </button>
           </div>
         </div>
 
-        <div className="md:flex items-center justify-between">
-          <div>
-            <img
-              width={100}
-              src="https://grainger-prod.adobecqms.net/content/dam/grainger/gus/en/public/digital-tactics/know-how/hero/SS-KH_HandToolsBusinessesShouldHave_KH-HRO.jpg"
-              alt="image"
-            />
-          </div>
-          <div className="py-5 md:py-0">
-            <h1 className="text-lg text-slate-700">
-              Hardware Tools Hardware ToolsHardware ToolsHardware
-            </h1>
-          </div>
-
-          <div className="flex items-center gap-8 border border-purple-400 rounded-xl text-xl md:w-38 w-32">
-            <button onClick={decrimentHandle} className="text-white bg-purple-600 p-2 rounded-l-lg">
-              -
-            </button>
-
-            <span>{conunt}</span>
-            <button onClick={incrimentHandle} className="text-white bg-purple-600 p-2 rounded-r-lg">
-              +
-            </button>
-          </div>
-        </div>
-
-        <div className="md:flex items-center justify-between">
-          <div>
-            <img
-              width={100}
-              src="https://grainger-prod.adobecqms.net/content/dam/grainger/gus/en/public/digital-tactics/know-how/hero/SS-KH_HandToolsBusinessesShouldHave_KH-HRO.jpg"
-              alt="image"
-            />
-          </div>
-          <div className="py-5 md:py-0">
-            <h1 className="text-lg text-slate-700">
-              Hardware Tools Hardware ToolsHardware ToolsHardware
-            </h1>
-          </div>
-
-          <div className="flex items-center gap-8 border border-purple-400 rounded-xl text-xl md:w-38 w-32">
-            <button onClick={decrimentHandle} className="text-white bg-purple-600 p-2 rounded-l-lg">
-              -
-            </button>
-
-            <span>{conunt}</span>
-            <button onClick={incrimentHandle} className="text-white bg-purple-600 p-2 rounded-r-lg">
-              +
-            </button>
-          </div>
-        </div>
       </div>
     </div>
   );
