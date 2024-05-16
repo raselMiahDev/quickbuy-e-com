@@ -5,7 +5,7 @@ const FailMessage = () => {
         <div className="h-screen bg-slate-100 flex items-center justify-center px-5 md:px-0">
         <div className="bg-white p-16">
           <div className="text-center">
-            <div className="flex items-center gap-4 text-2xl md:text-4xl text-green-700 justify-center">
+            <div className="flex items-center gap-4 text-2xl md:text-4xl text-red-500 justify-center">
               <span>
               <MdError />
               </span>
