@@ -1,11 +1,12 @@
 import React from 'react';
 import FailMessage from '../components/FailMessage';
+import MasterLayout from '../layout/MasterLayout';
 
 const PaymentFail = () => {
     return (
-        <div>
+        <MasterLayout>
             <FailMessage/>
-        </div>
+        </MasterLayout>
     );
 };
 

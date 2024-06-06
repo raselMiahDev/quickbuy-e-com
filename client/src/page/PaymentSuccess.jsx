@@ -1,11 +1,12 @@
 import React from 'react';
 import SuccessMessage from '../components/SuccessMessage';
+import MasterLayout from '../layout/MasterLayout';
 
 const PaymentSuccess = () => {
     return (
-        <div>
+        <MasterLayout>
             <SuccessMessage/>
-        </div>
+        </MasterLayout>
     );
 };
 
