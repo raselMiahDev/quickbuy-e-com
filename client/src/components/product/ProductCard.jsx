@@ -1,66 +1,77 @@
 // ProductCard.js
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Link} from "react-router-dom";
 
 const ProductCard = () => {
-  const products = [
-    {
-      id: 1,
-      image: "https://via.placeholder.com/400",
-      title: "Material Product",
-      category: "Materials",
-      price: 29.99,
-    },
-    {
-      id: 2,
-      image: "https://via.placeholder.com/400",
-      title: "Material Product",
-      category: "Materials",
-      price: 29.99,
-    },
-    {
-      id: 3,
-      image: "https://via.placeholder.com/400",
-      title: "Material Product",
-      category: "Materials",
-      price: 29.99,
-    },
-    {
-      id: 4,
-      image: "https://via.placeholder.com/400",
-      title: "Material Product",
-      category: "Materials",
-      price: 29.99,
-    },
-    {
-      id: 4,
-      image: "https://via.placeholder.com/400",
-      title: "Material Product",
-      category: "Materials",
-      price: 29.99,
-    },
-    {
-      id: 4,
-      image: "https://via.placeholder.com/400",
-      title: "Material Product",
-      category: "Materials",
-      price: 29.99,
-    },
-    {
-      id: 4,
-      image: "https://via.placeholder.com/400",
-      title: "Material Product",
-      category: "Materials",
-      price: 29.99,
-    },
-    {
-      id: 4,
-      image: "https://via.placeholder.com/400",
-      title: "Material Product",
-      category: "Materials",
-      price: 29.99,
-    },
-  ];
+  // const products = [
+  //   {
+  //     id: 1,
+  //     image: "https://via.placeholder.com/400",
+  //     title: "Material Product",
+  //     category: "Materials",
+  //     price: 29.99,
+  //   },
+  //   {
+  //     id: 2,
+  //     image: "https://via.placeholder.com/400",
+  //     title: "Material Product",
+  //     category: "Materials",
+  //     price: 29.99,
+  //   },
+  //   {
+  //     id: 3,
+  //     image: "https://via.placeholder.com/400",
+  //     title: "Material Product",
+  //     category: "Materials",
+  //     price: 29.99,
+  //   },
+  //   {
+  //     id: 4,
+  //     image: "https://via.placeholder.com/400",
+  //     title: "Material Product",
+  //     category: "Materials",
+  //     price: 29.99,
+  //   },
+  //   {
+  //     id: 4,
+  //     image: "https://via.placeholder.com/400",
+  //     title: "Material Product",
+  //     category: "Materials",
+  //     price: 29.99,
+  //   },
+  //   {
+  //     id: 4,
+  //     image: "https://via.placeholder.com/400",
+  //     title: "Material Product",
+  //     category: "Materials",
+  //     price: 29.99,
+  //   },
+  //   {
+  //     id: 4,
+  //     image: "https://via.placeholder.com/400",
+  //     title: "Material Product",
+  //     category: "Materials",
+  //     price: 29.99,
+  //   },
+  //   {
+  //     id: 4,
+  //     image: "https://via.placeholder.com/400",
+  //     title: "Material Product",
+  //     category: "Materials",
+  //     price: 29.99,
+  //   },
+  // ];
+
+  const [products,setProducts]=useState([])
+
+  useEffect(()=>{
+    (async()=>{
+      let result = await axios.get("https://fakestoreapi.com/products")
+
+      setProducts(result.data)
+    })()
+  },[])
   return (
     <div className="grid grid-cols-1 md:grid-cols-4  justify-center items-center gap-5">
       {products.map((product) => {
