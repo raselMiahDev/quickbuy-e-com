@@ -1,20 +1,20 @@
 import React from "react";
 import ProductCard from "../components/product/ProductCard";
 import MasterLayout from "../layout/MasterLayout";
-import FilterSideBar from "../components/product/FilterSideBar";
 import NewsLetter from "../common/NewsLetter";
 import Category from "../components/product/Category";
+import HeroBanner from "../components/heroSection/HeroBanner";
+import CustomerBenifit from "../components/heroSection/CustomerBenifit";
+import Title from "../common/Title";
 
 const Home = () => {
   return (
     <MasterLayout>
-      <div className="px-10 md:px-20 py-10 grid md:grid-cols-12 gap-5">
-        <div className="col-span-1">
-          <FilterSideBar />
-        </div>
-        <div className="col-span-11">
+      <HeroBanner/>
+      <CustomerBenifit/>
+      <div className="px-10 md:px-40">
+          <Title title="New Arrival" description="lorem inspute the change"/>
           <ProductCard />
-        </div>
       </div>
       <Category/>
       <NewsLetter/>

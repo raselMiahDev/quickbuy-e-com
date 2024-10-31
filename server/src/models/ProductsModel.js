@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 
 const DataSchema = mongoose.Schema(
   {
-    pro_name: { type: String, required: true },
-    pro_price: { type: String, required: true },
-    pro_image: { type: String },
+    name: { type: String, required: true },
+    price: { type: String, required: true },
+    image: { type: String },
     category_id: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
