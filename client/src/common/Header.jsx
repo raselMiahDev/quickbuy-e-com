@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { BsCart2, BsPerson, BsEnvelope, BsHeart } from "react-icons/bs";
+import { BsCart2, BsPerson, BsSearch } from "react-icons/bs";
 import CartSideBar from "../components/CartSideBar";
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [showMobileSearch, setShowMobileSearch] = useState(false);
 
   const showSidebar = () => {
     setIsVisible(true);
@@ -14,20 +16,39 @@ const Header = () => {
     setIsVisible(false);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="border-b px-10 md:px-20 py-5">
+    <nav
+      className={`px-5 md:px-20 py-3 md:py-5 transition-all duration-300 ease-in-out z-50 ${
+        isScrolled ? "fixed top-0 left-0 w-full bg-white shadow-lg" : "relative"
+      }`}
+    >
       <div className="flex items-center justify-between">
 
-        <div className="text-purple-500 font-semibold text-2xl flex items-center">
-          <span className="bg-purple-500 text-white p-2 rounded">
-            <BsCart2 size={25} />
+        {/* Brand Logo */}
+        <div className="text-purple-500 font-semibold text-xl md:text-2xl flex items-center">
+          <span className="bg-purple-500 text-white p-1 md:p-2 rounded">
+            <BsCart2 size={20} />
           </span>
           <Link to="/" className="ml-2">
             Brand
           </Link>
         </div>
 
-        <div className="md:block hidden ml-5 flex-none items-center border rounded overflow-hidden">
+        {/* Search Bar (Desktop) */}
+        <div className="hidden md:flex ml-5 flex-none items-center border rounded overflow-hidden">
           <input
             type="text"
             placeholder="Search"
@@ -41,13 +62,16 @@ const Header = () => {
           <button className="bg-purple-500 text-white px-3 py-2">Search</button>
         </div>
 
-        <div className="flex items-center space-x-6">
+        {/* Icons and Cart Sidebar Trigger */}
+        <div className="flex items-center space-x-4 md:space-x-6">
           <Link
-            to="/profile"
+            to="/user-profile"
             className="flex items-center space-x-2 hover:text-purple-700"
           >
             <BsPerson size={20} />
-            <span>Profile</span>
+            <span className="hidden md:inline">
+              <Link to="/user-profile">Profile</Link>
+            </span>
           </Link>
 
           <div
@@ -57,15 +81,39 @@ const Header = () => {
             <button className="flex">
               <BsCart2 size={25} />
             </button>
-            <span>Cart List</span>
+            <span className="hidden md:inline">Cart List</span>
           </div>
           {isVisible && (
-        <CartSideBar hideSidebar={hideSidebar} isVisible={isVisible} />
-      )}
+            <CartSideBar hideSidebar={hideSidebar} isVisible={isVisible} />
+          )}
+        </div>
+
+        {/* Search Icon for Mobile */}
+        <div
+          className="md:hidden cursor-pointer text-purple-500"
+          onClick={() => setShowMobileSearch(!showMobileSearch)}
+        >
+          <BsSearch size={20} />
         </div>
       </div>
 
-
+      {/* Mobile Search Bar */}
+      <div
+        className={`${
+          showMobileSearch ? "max-h-40" : "max-h-0"
+        } overflow-hidden transition-max-height duration-300 ease-in-out mt-3`}
+      >
+        <div className="flex items-center border border-purple-300 rounded-md p-2 bg-purple-100">
+          <input
+            type="text"
+            placeholder="Search"
+            className="w-full px-3 py-2 focus:outline-none rounded-md bg-white text-gray-700"
+          />
+          <button className="bg-purple-500 text-white px-5 py-2 rounded-md ml-2">
+            Search
+          </button>
+        </div>
+      </div>
     </nav>
   );
 };
