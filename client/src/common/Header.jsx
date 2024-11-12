@@ -4,9 +4,27 @@ import { BsCart2, BsPerson, BsSearch } from "react-icons/bs";
 import CartSideBar from "../components/CartSideBar";
 
 const Header = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const cartItems = [
+    {
+      id: 1,
+      image: "https://via.placeholder.com/150",
+      title: "Product 1",
+      price: 25,
+      quantity: 2,
+    },
+    {
+      id: 2,
+      image: "https://via.placeholder.com/150",
+      title: "Product 2",
+      price: 15,
+      quantity: 1,
+    },
+  ];
+
+  const [isCartVisible, setIsCartVisible] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [showMobileSearch, setShowMobileSearch] = useState(false);
+
 
   const showSidebar = () => {
     setIsVisible(true);
@@ -31,7 +49,7 @@ const Header = () => {
 
   return (
     <nav
-      className={`px-5 md:px-20 py-3 md:py-5 transition-all duration-300 ease-in-out z-50 ${
+      className={`px-5 md:px-20 py-2 md:py-3 transition-all duration-300 ease-in-out z-50 ${
         isScrolled ? "fixed top-0 left-0 w-full bg-white shadow-lg" : "relative"
       }`}
     >
@@ -52,13 +70,8 @@ const Header = () => {
           <input
             type="text"
             placeholder="Search"
-            className="border-none px-3 py-2 focus:outline-none"
+            className="border-none px-3 py-2 focus:outline-none w-96"
           />
-          <select className="border-l px-3 py-2 focus:outline-none">
-            <option>All category</option>
-            <option>Category 1</option>
-            <option>Category 2</option>
-          </select>
           <button className="bg-purple-500 text-white px-3 py-2">Search</button>
         </div>
 
@@ -75,7 +88,7 @@ const Header = () => {
           </Link>
 
           <div
-            onClick={showSidebar}
+            onClick={() => setIsCartVisible(true)}
             className="flex space-x-2 hover:text-purple-700 cursor-pointer"
           >
             <button className="flex">
@@ -83,8 +96,10 @@ const Header = () => {
             </button>
             <span className="hidden md:inline">Cart List</span>
           </div>
-          {isVisible && (
-            <CartSideBar hideSidebar={hideSidebar} isVisible={isVisible} />
+          {isCartVisible && (
+            <CartSideBar isVisible={isCartVisible}
+            hideSidebar={() => setIsCartVisible(false)}
+            cartItems={cartItems} />
           )}
         </div>
 
