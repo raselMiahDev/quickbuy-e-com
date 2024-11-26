@@ -3,10 +3,10 @@ const DataSchema = mongoose.Schema(
   {
     product_id: { type: mongoose.Schema.Types.ObjectId, required: true },
     user_id: { type: mongoose.Schema.Types.ObjectId, required: true },
-    qty: { type: String, required: true },
-    size: { type: String },
+    status: { type: String, required: true },
+    total_amount: { type: String, required: true },
   },
   { timestamps: true, versionKey: false }
 );
-const CartModel = mongoose.model("carts", DataSchema);
-module.exports = CartModel;
+const OrderModel = mongoose.model("orders", DataSchema);
+module.exports = OrderModel;

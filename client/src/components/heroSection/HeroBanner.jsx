@@ -13,7 +13,7 @@ const HeroBanner = () => {
                     </h1>
 
                     <div className='text-center md:text-left'>
-                        <Link to={"/shop"}>
+                        <Link to={"/all-products"}>
                         <button className="relative px-8 py-4 border border-black text-black font-semibold overflow-hidden group transition-all duration-300 ease-in-out">
                         <span className="absolute inset-0 bg-[#a655f9] transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-in-out"></span>
                         <span className="relative z-10 group-hover:text-white">Shop Now</span>

@@ -5,6 +5,7 @@ import PaymentSuccess from "./page/PaymentSuccess";
 import PaymentFail from "./page/PaymentFail";
 import Details from "./page/Details";
 import UserProfile from "./page/UserProfile";
+import AllProduct from "./page/AllProduct";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/payment-fail" element={<PaymentFail/>}/>
           <Route path="/details/:id" element={<Details/>}/>
           <Route path="/user-profile" element={<UserProfile/>}/>
+          <Route path="/all-products" element={<AllProduct/>}/>
         </Routes>
        </BrowserRouter>
     </>
