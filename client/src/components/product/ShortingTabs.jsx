@@ -13,8 +13,11 @@ const SortingTabs = () => {
   ];
 
   return (
-    <div className="flex items-end">
-            <div className="flex items-center space-x-4 bg-white p-2 border border-gray-300 rounded shadow-md">
+    <div className="flex justify-between">
+      <div>
+          <p className="text-slate-500 font-light uppercase">Sorting for get your targated products</p>
+      </div>
+      <div className="flex items-center space-x-4 bg-white p-2 border border-gray-300 rounded shadow-md">
       {/* View Mode Icons */}
       <div className="flex space-x-1">
         <button className="p-2 border border-gray-300 rounded hover:bg-gray-200">
