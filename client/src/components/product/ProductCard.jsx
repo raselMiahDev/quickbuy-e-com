@@ -27,17 +27,16 @@ const ProductCard = () => {
         </Link>
 
         {/* Button Section */}
-        <div className="absolute bottom-0 left-0 right-0 transform translate-y-full group-hover:translate-y-0 bg-white bg-opacity-90 transition-transform duration-300 ease-in-out flex justify-between p-4">
-          <button className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4">
+        <div className="absolute bottom-0 left-0 right-0 transform translate-y-full group-hover:translate-y-0 bg-purple-200 bg-opacity-90 transition-transform duration-300 ease-in-out flex justify-between p-4">
+          <button className="bg-purple-500 hover:bg-purple-700 text-white text-sm py-2 px-4">
             Add to Cart
           </button>
           <div>
-            <p>Price</p>
-            <p>{product.price}</p>
+            <p>৳ : {product.price}</p>
           </div>
           <Link
             to={`/details/${product.id}`}
-            className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4"
+            className="bg-purple-500 hover:bg-purple-700 text-white text-sm py-2 px-4"
           >
             Details
           </Link>
@@ -49,7 +48,7 @@ const ProductCard = () => {
             <div className="text-md mb-2 tracking-wider">{product.title}</div>
           </Link>
           <p className="text-gray-700 text-base">Rating</p>
-          <p className="text-gray-900 font-bold">${product.price}</p>
+          <p className="text-gray-900 font-bold">৳ : {product.price}</p>
         </div>
       </div>
     );
